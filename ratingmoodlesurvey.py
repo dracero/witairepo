@@ -17,7 +17,7 @@ class Reader:
     from oauth2client.service_account import ServiceAccountCredentials
     import pandas as pd
     import requests
-    WIT_ACCESS_TOKEN = 'ICX6YP2D6NJV3VKIFF56ZGTQ4PW53TRN'
+    WIT_ACCESS_TOKEN = <your token here>
     from wit import Wit
     cliente = Wit(access_token=WIT_ACCESS_TOKEN)
 
@@ -54,7 +54,7 @@ class Writer:
     scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
     creds = ServiceAccountCredentials.from_json_keyfile_name('cliente_secret.json', scope)
     client = gspread.authorize(creds)
-    spreadsheet_key = '1-dmyQYJDvYmKHk3wLo7n_2116XDQIQya16jrC77d9U0'
+    spreadsheet_key = <yor spreadsheet ID here>
     wks_name = 'ratings'
     d2g.upload(data, spreadsheet_key, wks_name, credentials=creds, row_names=True, clean=True)
 
